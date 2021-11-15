@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "raminagrobis_v1", "raminagrobis_v1\raminagrobis_v1.csproj", "{301623B3-C0C2-4BB3-BF16-7C7DAD92FE47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Depot.DAL", "Depot.DAL\Depot.DAL.csproj", "{CC7D3003-1F12-420C-B7B4-5F2B534AB979}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{301623B3-C0C2-4BB3-BF16-7C7DAD92FE47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{301623B3-C0C2-4BB3-BF16-7C7DAD92FE47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{301623B3-C0C2-4BB3-BF16-7C7DAD92FE47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{301623B3-C0C2-4BB3-BF16-7C7DAD92FE47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC7D3003-1F12-420C-B7B4-5F2B534AB979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC7D3003-1F12-420C-B7B4-5F2B534AB979}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC7D3003-1F12-420C-B7B4-5F2B534AB979}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC7D3003-1F12-420C-B7B4-5F2B534AB979}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D24A60BC-0701-42D7-9989-25BA29669B1B}
+	EndGlobalSection
+EndGlobal
