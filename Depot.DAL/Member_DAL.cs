@@ -3,21 +3,21 @@ using System.Data.SqlClient;
 
 namespace Raminagrobis.DAL
 {
-    public class Fournisseurs_DAL
+    public class Member_DAL
     {
-        public string company { get; private set; }
-        public string civility { get; private set; }
-        public string surname { get; private set; }
-        public string name { get; private set; }
-        public string email { get; private set; }
-        public string address { get; private set; }
+        public string Company { get; private set; }
+        public string Civility { get; private set; }
+        public string Surname { get; private set; }
+        public string Name { get; private set; }
+        public string Email { get; private set; }
+        public string Address { get; private set; }
 
         public int ID { get; set; }
 
-        public Fournisseurs_DAL(string company, string civility, string surname, string name, string email, string address) 
+        public Member_DAL(string company, string civility, string surname, string name, string email, string address) 
                 => (Company, Civility, Surname, Name, Email, Address) = (company, civility, surname, name, email, address);
 
-        public Fournisseurs_DAL(int id, string company, string civility, string surname, string name, string email, string address)
+        public Member_DAL(int id, string company, string civility, string surname, string name, string email, string address)
                 => (ID, Company, Civility, Surname, Name, Email, Address) = (id, company, civility, surname, name, email, address);
 
         internal void Insert(SqlConnection connexion)
