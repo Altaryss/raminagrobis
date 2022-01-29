@@ -69,5 +69,30 @@ namespace Raminagrobis.DAL.Depot
             return cart;
         }
 
+        public override Cart_DAL Update(Cart_DAL item)
+        {
+            CreerConnexionEtCommande();
+
+            commande.CommandText = "update Panier SET id_member = @id_member where id =  @id";
+            commande.Parameters.Add(new SqlParameter("@id_member", item.Id_Member));
+            commande.Parameters.Add(new SqlParameter("@id", item.ID));
+
+            var nb = (int)commande.ExecuteNonQuery();
+
+            DetruireConnexionEtCommande();
+
+            return item;
+        }
+
+        public override void Delete(Cart_DAL item)
+        {
+            CreerConnexionEtCommande();
+            commande.CommandText = "delet from Panier where ID =@ID";
+            commande.Parameters.Add(new SqlParameter("@ID", item.ID));
+            var reader = commande.ExecuteReader();
+
+            DetruireConnexionEtCommande();
+        }
+
     }
 }
