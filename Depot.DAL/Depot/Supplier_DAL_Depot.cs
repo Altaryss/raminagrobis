@@ -40,6 +40,39 @@ namespace Depot.DAL.Depot
             return rep;
         }
 
+        public List<Supplier_DAL> GetAllByIdForRefrences(int ID)
+        {
+            CreerConnexionEtCommande();
+
+            commande.CommandText = "SELECT id,company,civility,surname,name,email,address,create_at FROM Member Where id=@id";
+            commande.Parameters.Add(new SqlParameter("@id", ID));
+            var reader = commande.ExecuteReader();
+
+            var nb = new List<Supplier_DAL>();
+
+            while(reader.Read())
+            {
+                var add = new Supplier_DAL(
+
+
+                reader.GetInt32(0),
+                reader.GetString(1),
+                reader.GetString(2),
+                reader.GetString(3),
+                reader.GetString(4),
+                reader.GetString(5),
+                reader.GetString(6),
+                reader.GetDateTime(7)
+                    );
+                nb.Add(add);
+            }
+            DetruireConnexionEtCommande();
+
+            return nb;
+
+
+        }
+
         public override Supplier_DAL GetByID(int ID)
         {
             CreerConnexionEtCommande();

@@ -1,9 +1,11 @@
-﻿using Depot.DAL;
+﻿using Raminagrobis.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
 
-namespace Raminagrobis.DAL.Depot
+namespace Depot.DAL.Depot
 {
     public class Cart_DAL_Depot : Depot_DAL<Cart_DAL>
     {
@@ -17,7 +19,7 @@ namespace Raminagrobis.DAL.Depot
 
             while (reader.Read())
             {
-                var rajouter = new Cart_DAL(reader.Getint32(0), reader.Getint32(1));
+                var rajouter = new Cart_DAL(reader.GetInt32(0), reader.GetString(1));
                 list_cart.Add(rajouter);
             }
 
@@ -36,7 +38,7 @@ namespace Raminagrobis.DAL.Depot
             Cart_DAL rep;
             if (reader.Read())
             {
-                rep = new Cart_DAL(reader.GetInt32(0), reader.GetInt32(1));
+                rep = new Cart_DAL(reader.GetInt32(0), reader.GetString(1));
             }
             else
             {
