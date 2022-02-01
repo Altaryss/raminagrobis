@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raminagrobis_v1", "raminagr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Depot.DAL", "Depot.DAL\Depot.DAL.csproj", "{CC7D3003-1F12-420C-B7B4-5F2B534AB979}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raminagrobi.Metier", "Raminagrobi.Metier\Raminagrobi.Metier.csproj", "{EF6F6275-F2F2-4DD0-B926-BEA0A62329F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raminagrobi.Metier", "Raminagrobi.Metier\Raminagrobi.Metier.csproj", "{EF6F6275-F2F2-4DD0-B926-BEA0A62329F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{220A51F1-15DC-457C-894A-56F23DC31634}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
