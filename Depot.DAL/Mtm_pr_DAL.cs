@@ -15,21 +15,5 @@ namespace Raminagrobis.DAL
 
         public Mtm_pr_DAL(int id,int id_references, int id_supplier)
                => (ID,Id_references, Id_references) = (id,id_references, id_supplier);
-
-        internal void Insert(SqlConnection connexion)
-        {
-            using (var commande = new SqlCommand())
-            {
-                commande.Connection = connexion;
-                commande.CommandText = "insert into supplier(Id_references,id_supplier, id)"
-                                + " values (@Id_references, @id_supplier, @id_supplier, @id )";
-
-                commande.Parameters.Add(new SqlParameter("@Id_references", Id_references));
-                commande.Parameters.Add(new SqlParameter("@id_supplier", Id_supplier));
-                commande.Parameters.Add(new SqlParameter("@id", ID));
-
-                commande.ExecuteNonQuery();
-            }
-        }
     }
 }

@@ -16,20 +16,7 @@ namespace Raminagrobis.DAL
         public Globlal_cart_DAL(int id,int id_cart, string week_order)
                 => (ID,Id_cart, Week_order) = (id,id_cart, week_order);
 
-        internal void Insert(SqlConnection connexion)
-        {
-            using (var commande = new SqlCommand())
-            {
-                commande.Connection = connexion;
-                commande.CommandText = "insert into supplier(id_cart,week_order,id)"
-                                + " values (@id_cart, @week_order,@id )";
 
-                commande.Parameters.Add(new SqlParameter("@id_cart", Id_cart));
-                commande.Parameters.Add(new SqlParameter("@week_order", Week_order));
-                commande.Parameters.Add(new SqlParameter("@id", ID));
 
-                commande.ExecuteNonQuery();
-            }
-        }
     }
 }
