@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Raminagrobi.Metier
 {
-    internal class Class1
+    internal class Supplier
     {
     }
 }
