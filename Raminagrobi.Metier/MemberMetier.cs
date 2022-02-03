@@ -1,4 +1,10 @@
-﻿using System;
+﻿using Raminagrobis.DAL;
+using Depot.DAL.Depot;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
 
 namespace Raminagrobi.Metier
 {
@@ -28,7 +34,7 @@ namespace Raminagrobi.Metier
         public void Insert()
         {
             Member_DAL member = new Member_DAL(Company, Civility, Surname, Name, Email, Address, CreateAt);
-            Member_Depot_DAL memberDepot = new Member_Depot_DAL();
+            Member_DAL_Depot memberDepot = new Member_DAL_Depot();
             memberDepot.Insert(member);
         }
 
