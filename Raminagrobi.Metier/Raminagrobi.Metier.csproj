@@ -1,8 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Depot.DAL\Depot.DAL.csproj" />
+    <ProjectReference Include="..\Raminagrobis.Api.Contracts\Raminagrobi.Api.Contracts.csproj" />
+  </ItemGroup>
 
 </Project>

@@ -8,13 +8,13 @@ namespace Raminagrobi.Api.Contracts.Responses
 {
     public class MemberResponse
     {
-        public int ID { get; private set; }
-        public string Company { get; private set; }
-        public string Civility { get; private set; }
-        public string Surname { get; private set; }
-        public string Name { get; private set; }
-        public string Email { get; private set; }
-        public string Address { get; private set; }
-        public DateTime Create_at { get; private set; }
+        public int ID { get; set; }
+        public string Company { get; set; }
+        public string Civility { get; set; }
+        public string Surname { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Address { get; set; }
+        public DateTime Create_at { get; set; }
     }
 }

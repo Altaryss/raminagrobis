@@ -20,7 +20,7 @@ namespace Depot.DAL.Depot
 
             while (reader.Read())
             {
-                var rajouter = new Cart_DAL(reader.GetInt32(0), reader.GetString(1));
+                var rajouter = new Cart_DAL(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2));
                 list_cart.Add(rajouter);
             }
 
@@ -40,7 +40,7 @@ namespace Depot.DAL.Depot
             Cart_DAL rep;
             if (reader.Read())
             {
-                rep = new Cart_DAL(reader.GetInt32(0), reader.GetString(1));
+                rep = new Cart_DAL(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2));
             }
             else
             {

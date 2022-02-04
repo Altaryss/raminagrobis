@@ -16,10 +16,11 @@ namespace Raminagrobi.WPF.ViewModels
         public IEnumerable<CartResponse> CartList { get; set; }
         public CartViewModel()
         {
-            var api = RestService.For<IRaminogrobiApi>("https://localhost:44356");
-            //var clientApi = new CartService("https://localhost:44356", new HttpClient());
+            var api = RestService.For<IRaminogrobiApi>("https://localhost:5001");
+            //var clientApi = new CartService("https://localhost:5001", new HttpClient());
             var result = new List<CartResponse>();
-            result.Add(api.GetById(1).Result);
+            //result.Add(api.GetById(1).Result);
+            result.Add(api.GetCartById(1).Result);
             CartList = result;
         }
     }

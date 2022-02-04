@@ -80,7 +80,7 @@ namespace Depot.DAL.Depot
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "INSERT INTO member (company,civility,surname,name,email,address,create_at)" + "(@company,@civility,@surname,@name,@email,@address,@create_at); select scope_identity()";
+            commande.CommandText = "INSERT INTO member (company,civility,surname,name,email,address,create_at)" + "VALUES (@company,@civility,@surname,@name,@email,@address,@create_at); select scope_identity()";
 
             commande.Parameters.Add(new SqlParameter("@company", item.Company));
             commande.Parameters.Add(new SqlParameter("@civility", item.Civility));
@@ -90,16 +90,20 @@ namespace Depot.DAL.Depot
             commande.Parameters.Add(new SqlParameter("@address", item.Address));
             commande.Parameters.Add(new SqlParameter("@create_at", item.Create_at));
 
+            Member_DAL result = null;
+            if (commande.ExecuteNonQuery() > 0)
+                result = item;
+
             DetruireConnexionEtCommande();
 
-            return item;
+            return result;
         }
 
         public override Member_DAL Update(Member_DAL item)
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "UPDATE member set company = @company, civility = @civility, surname = @surname, name = @name, email = @email, address = @address, create_at = @create_at, id = @id";
+            commande.CommandText = "UPDATE member set company = @company, civility = @civility, surname = @surname, name = @name, email = @email, address = @address, create_at = @create_at WHERE id = @id";
 
             commande.Parameters.Add(new SqlParameter("@company", item.Company));
             commande.Parameters.Add(new SqlParameter("@civility", item.Civility));

@@ -1,6 +1,8 @@
 using Depot.DAL.Depot;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Raminagrobi.Api.Contracts.Requests;
 using Raminagrobi.Api.Contracts.Responses;
 using Raminagrobi.Api.Factories;
 using System;
@@ -27,28 +29,76 @@ namespace Raminagrobi.Api.Controllers
         [Route("GetAll")]
         public ActionResult<IEnumerable<MemberResponse>> GetAll()
         {
-            var toto = _db.GetAll();
+            var res = _db.GetAll();
 
-            if (toto == null || toto.Count <= 0)
+            if (res == null || res.Count <= 0)
                 return NotFound();
 
-            return Ok(toto.Select(x => x.ToResponse()));
+            return Ok(res.Select(x => x.ToResponse()));
         }
-        /*
+
         [HttpGet]
         [Route("GetById")]
-        public ActionResult<CartResponse> GetById(int id)
+        public ActionResult<MemberResponse> GetById(int id)
         {
             if (id <= 0)
                 return BadRequest();
 
-            var toto = _db.GetByID(id);
+            var res = _db.GetByID(id);
 
-            if (toto == null)
+            if (res == null)
                 return NotFound();
 
-            return Ok(toto.ToResponse());
+            return Ok(res.ToResponse());
         }
-        */
+
+        [HttpPost]
+        [Route("AddMember")]
+        public ActionResult AddMember(MemberRequest request)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            if (_db.Insert(request.ToDto()) == null)
+                return Problem("Insert into database failed", statusCode: StatusCodes.Status500InternalServerError);
+
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("UpdateMember")]
+        public ActionResult UpdateMember(MemberRequest request, int id)
+        {
+            if (id <= 0)
+                return BadRequest();
+
+            var res = _db.GetByID(id);
+
+            if (res == null)
+                return NotFound();
+
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            if (_db.Update(request.ToDto()) == null)
+                return Problem("Update into database failed", statusCode: StatusCodes.Status500InternalServerError);
+
+            return Ok();
+        }
+
+        [HttpDelete]
+        [Route("Delete")]
+        public ActionResult Delete(int id)
+        {
+            if (id <= 0)
+                return BadRequest();
+
+            var res = _db.GetByID(id);
+
+            if (res == null)
+                return NotFound();
+
+            return Ok();
+        }
     }
 }

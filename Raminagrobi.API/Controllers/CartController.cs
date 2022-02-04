@@ -27,12 +27,12 @@ namespace Raminagrobi.Api.Controllers
         [Route("GetAll")]
         public ActionResult<IEnumerable<CartResponse>> GetAll()
         {
-            var toto = _db.GetAll();
+            var res = _db.GetAll();
 
-            if (toto == null || toto.Count <= 0)
+            if (res == null || res.Count <= 0)
                 return NotFound();
 
-            return Ok(toto.Select(x => x.ToResponse()));
+            return Ok(res.Select(x => x.ToResponse()));
         }
 
         [HttpGet]
@@ -42,12 +42,12 @@ namespace Raminagrobi.Api.Controllers
             if (id <= 0)
                 return BadRequest();
 
-            var toto = _db.GetByID(id);
+            var res = _db.GetByID(id);
 
-            if (toto == null)
+            if (res == null)
                 return NotFound();
 
-            return Ok(toto.ToResponse());
+            return Ok(res.ToResponse());
         }
     }
 }

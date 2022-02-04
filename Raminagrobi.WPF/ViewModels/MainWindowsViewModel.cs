@@ -26,7 +26,7 @@ namespace Raminagrobi.WPF.ViewModels
 
         private void OnMySuperButtonCommand()
         {
-            //Content = new CartViewModel();
+            Content = new MemberViewModel();
         }
     }
 }
