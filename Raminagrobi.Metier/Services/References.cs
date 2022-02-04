@@ -40,16 +40,16 @@ namespace Raminagrobi.Metier.Services
         public static void Update(int id, ReferencesReponse input)
         {
             var dep = new References_DAL_Depot();
-            var member = new References_DAL(id, input.References, input.Wording, input.Brand, input.Status);
-            dep.Update(member);
+            var references = new References_DAL(id, input.References, input.Wording, input.Brand, input.Status);
+            dep.Update(references);
         }
 
         public static void Delete(int id)
         {
-            Member_DAL member;
-            Member_DAL_Depot dep = new Member_DAL_Depot;
-            member = dep.GetByID(id);
-            dep.Delete(member);
+            References_DAL references;
+            References_DAL_Depot dep = new References_DAL_Depot();
+            references = dep.GetByID(id);
+            dep.Delete(references);
         }
     }
 }

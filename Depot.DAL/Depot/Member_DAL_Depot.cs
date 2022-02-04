@@ -80,7 +80,7 @@ namespace Depot.DAL.Depot
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "INSERT INTO member (company,civility,surname,name,email,address,create_at)" + "(@company,@civility,@surname,@name,@email,@address,@create_at); select scope_identity()";
+            commande.CommandText = "INSERT INTO member (company,civility,surname,name,email,address,create_at)" + "value (@company,@civility,@surname,@name,@email,@address,@create_at); select scope_identity()";
 
             commande.Parameters.Add(new SqlParameter("@company", item.Company));
             commande.Parameters.Add(new SqlParameter("@civility", item.Civility));
