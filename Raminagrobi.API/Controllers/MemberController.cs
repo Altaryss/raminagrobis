@@ -1,16 +1,16 @@
-using Raminagrobi.Metier.Services;
+using Raminagrobis.Metier.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Raminagrobi.Api.Contracts.Requests;
-using Raminagrobi.Api.Contracts.Responses;
-using Raminagrobi.Api.Factories;
+using Raminagrobis.Api.Contracts.Requests;
+using Raminagrobis.Api.Contracts.Responses;
+using Raminagrobis.Api.Factories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Raminagrobi.Api.Controllers
+namespace Raminagrobis.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -59,9 +59,6 @@ namespace Raminagrobi.Api.Controllers
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            if (_db.Insert(request.ToDto()) == null)
-                return Problem("Insert into database failed", statusCode: StatusCodes.Status500InternalServerError);
-
             return Ok();
         }
 
@@ -80,9 +77,6 @@ namespace Raminagrobi.Api.Controllers
 
             if (!ModelState.IsValid)
                 return BadRequest();
-
-            if (_db.Update(request.ToDto()) == null)
-                return Problem("Update into database failed", statusCode: StatusCodes.Status500InternalServerError);
 
             return Ok();
         }

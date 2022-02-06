@@ -1,6 +1,6 @@
-﻿using Raminagrobi.Api.Contracts.Responses;
-using Raminagrobi.WPF.Api;
-using Raminagrobi.WPF.Core;
+﻿using Raminagrobis.Api.Contracts.Responses;
+using Raminagrobis.WPF.Api;
+using Raminagrobis.WPF.Core;
 using Refit;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Raminagrobi.WPF.ViewModels
+namespace Raminagrobis.WPF.ViewModels
 {
     public class CartViewModel : BaseViewModel
     {

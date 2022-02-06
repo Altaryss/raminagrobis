@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Raminagrobi.Metier
+namespace Raminagrobis.Metier
 {
     public class CartMetier
     {
-        public int ID { get; set; }
+        public int ID { get; private set; }
         public int Id_Member { get; private set; }
         public string Week_order { get; private set; }
 

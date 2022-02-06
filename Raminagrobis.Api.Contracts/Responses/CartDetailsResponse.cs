@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Raminagrobi.Api.Contracts.Responses
+namespace Raminagrobis.Api.Contracts.Responses
 {
     public class CartDetailsResponse
     {
         public int ID { get; set; }
-        public int Id_cart { get; private set; }
-        public int Id_references { get; private set; }
-        public int Id_global_details { get; private set; }
-        public int Quantity { get; private set; }
+        public int IdCart { get; set; }
+        public int IdReferences { get; set; }
+        public int IdGlobalDetails { get; set; }
+        public int Quantity { get; set; }
     }
 }

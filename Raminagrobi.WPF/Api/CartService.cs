@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using Raminagrobi.Api.Contracts.Responses;
+using Raminagrobis.Api.Contracts.Responses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Raminagrobi.WPF.Api
+namespace Raminagrobis.WPF.Api
 {
     public class CartService
     {

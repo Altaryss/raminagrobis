@@ -1,12 +1,12 @@
-using Raminagrobi.Api.Contracts.Requests;
-using Raminagrobi.Api.Contracts.Responses;
-using Raminagrobi.Metier;
+using Raminagrobis.Api.Contracts.Requests;
+using Raminagrobis.Api.Contracts.Responses;
+using Raminagrobis.Metier;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Raminagrobi.Api.Factories
+namespace Raminagrobis.Api.Factories
 {
     public static class MemberFactory
     {
@@ -24,7 +24,7 @@ namespace Raminagrobi.Api.Factories
                 Name = dto.Name,
                 Email = dto.Email,
                 Address = dto.Address,
-                Create_at = dto.CreateAt,
+                CreatedAt = dto.CreateAt,
             };
         }
 

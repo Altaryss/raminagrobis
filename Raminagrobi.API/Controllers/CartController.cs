@@ -1,26 +1,28 @@
-﻿using Depot.DAL.Depot;
+﻿using Raminagrobis.Metier.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Raminagrobi.Api.Contracts.Responses;
-using Raminagrobi.Api.Factories;
+using Raminagrobis.Api.Contracts.Requests;
+using Raminagrobis.Api.Contracts.Responses;
+using Raminagrobis.Api.Factories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Raminagrobi.Api.Controllers
+namespace Raminagrobis.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class CartController : ControllerBase
     {
         private readonly ILogger<CartController> _logger;
-        private readonly Cart_DAL_Depot _db;
+        private readonly Cart _db;
 
         public CartController(ILogger<CartController> logger)
         {
             _logger = logger;
-            _db = new Cart_DAL_Depot();
+            _db = new Cart();
         }
 
         [HttpGet]
@@ -48,6 +50,50 @@ namespace Raminagrobi.Api.Controllers
                 return NotFound();
 
             return Ok(res.ToResponse());
+        }
+
+        [HttpPost]
+        [Route("AddCart")]
+        public ActionResult AddCart(CartRequest request)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("UpdateCart")]
+        public ActionResult UpdateCart(CartRequest request, int id)
+        {
+            if (id <= 0)
+                return BadRequest();
+
+            var res = _db.GetByID(id);
+            request.ID = id;
+
+            if (res == null)
+                return NotFound();
+
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            return Ok();
+        }
+
+        [HttpDelete]
+        [Route("DeleteCart")]
+        public ActionResult DeleteCart(int id)
+        {
+            if (id <= 0)
+                return BadRequest();
+
+            var res = _db.GetByID(id);
+
+            if (res == null)
+                return NotFound();
+
+            return Ok();
         }
     }
 }

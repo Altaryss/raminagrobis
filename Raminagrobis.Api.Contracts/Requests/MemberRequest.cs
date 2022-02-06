@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Raminagrobi.Api.Contracts.Requests
+namespace Raminagrobis.Api.Contracts.Requests
 {
     public class MemberRequest
     {

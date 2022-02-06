@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Raminagrobi.Metier
+namespace Raminagrobis.Metier
 {
-    internal class MtmPrMetier
+    public class MtmPrMetier
     {        
         public int ID { get; set; }
         public int Id_references { get; private set; }

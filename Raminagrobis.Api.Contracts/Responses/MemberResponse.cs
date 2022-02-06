@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Raminagrobi.Api.Contracts.Responses
+namespace Raminagrobis.Api.Contracts.Responses
 {
     public class MemberResponse
     {
@@ -15,6 +15,6 @@ namespace Raminagrobi.Api.Contracts.Responses
         public string Name { get; set; }
         public string Email { get; set; }
         public string Address { get; set; }
-        public DateTime Create_at { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }

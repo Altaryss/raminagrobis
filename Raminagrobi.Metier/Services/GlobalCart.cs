@@ -1,5 +1,5 @@
 ﻿using Raminagrobis.DAL;
-using Raminagrobi.Api.Contracts.Responses;
+using Raminagrobis.Api.Contracts.Responses;
 using Depot.DAL.Depot;
 using System;
 using System.Collections.Generic;
@@ -7,11 +7,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
-namespace Raminagrobi.Metier.Services
+namespace Raminagrobis.Metier.Services
 {
     public class GlobalCart
     {
-        public static List<GlobalCartMetier> GetAll()
+        public List<GlobalCartMetier> GetAll()
         {
             var all = new List<GlobalCartMetier>();
             var dep = new Globlal_cart_DAL_Depot();
@@ -22,28 +22,28 @@ namespace Raminagrobi.Metier.Services
             return all;
         }
 
-        public static GlobalCartMetier GetByID(int id)
+        public GlobalCartMetier GetByID(int id)
         {
             var dep = new Globlal_cart_DAL_Depot();
             var globalcart = dep.GetByID(id);
             return new GlobalCartMetier(globalcart.ID, globalcart.Id_cart, globalcart.Week_order);
         }
 
-        public static void Insert(GlobalCartResponse input)
+        public void Insert(GlobalCartResponse input)
         {
             var dep = new Globlal_cart_DAL_Depot();
-            var globalcart = new Globlal_cart_DAL(input.Id_cart, input.Week_order);
+            var globalcart = new Globlal_cart_DAL(input.IdCart, input.WeekOrder);
             dep.Insert(globalcart);
         }
 
-        public static void Update(int id, GlobalCartResponse input)
+        public void Update(int id, GlobalCartResponse input)
         {
             var dep = new Globlal_cart_DAL_Depot();
-            var globalcart = new Globlal_cart_DAL(id, input.Id_cart, input.Week_order);
+            var globalcart = new Globlal_cart_DAL(id, input.IdCart, input.WeekOrder);
             dep.Update(globalcart);
         }
 
-        public static void Delete(int id)
+        public void Delete(int id)
         {
             Globlal_cart_DAL globalcart;
             Globlal_cart_DAL_Depot dep = new Globlal_cart_DAL_Depot();

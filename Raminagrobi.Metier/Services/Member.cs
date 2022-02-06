@@ -1,14 +1,14 @@
 ﻿using Raminagrobis.DAL;
-using Raminagrobi.Api.Contracts.Responses;
+using Raminagrobis.Api.Contracts.Responses;
 using Depot.DAL.Depot;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using Raminagrobi.Api.Contracts.Requests;
+using Raminagrobis.Api.Contracts.Requests;
 
-namespace Raminagrobi.Metier.Services
+namespace Raminagrobis.Metier.Services
 {
     public class Member
     {
@@ -30,17 +30,17 @@ namespace Raminagrobi.Metier.Services
             return new MemberMetier(member.ID, member.Company, member.Civility, member.Surname, member.Name, member.Email, member.Address, member.Create_at);
         }
 
-        public void Insert(MemberRequest input)
+        public void Insert(MemberMetier input)
         {
             var dep = new Member_DAL_Depot();
-            var member = new Member_DAL(input.Company, input.Civility, input.Surname, input.Name, input.Email, input.Address, input.CreatedAt);
+            var member = new Member_DAL(input.Company, input.Civility, input.Surname, input.Name, input.Email, input.Address, input.CreateAt);
             dep.Insert(member);
         }
 
-        public void Update(int id, MemberRequest input)
+        public static void Update(int id, MemberRequest request)
         {
             var dep = new Member_DAL_Depot();
-            var member = new Member_DAL(id, input.Company, input.Civility, input.Surname, input.Name, input.Email, input.Address, input.CreatedAt);
+            var member = new Member_DAL(id, request.Company, request.Civility, request.Surname, request.Name, request.Email, request.Address, request.CreatedAt);
             dep.Update(member);
         }
 

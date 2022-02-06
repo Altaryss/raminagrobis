@@ -1,4 +1,4 @@
-﻿using Raminagrobi.WPF.ViewModels;
+﻿using Raminagrobis.WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Raminagrobi.WPF
+namespace Raminagrobis.WPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

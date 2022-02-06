@@ -1,5 +1,5 @@
-﻿using Raminagrobi.Api.Contracts.Requests;
-using Raminagrobi.Api.Contracts.Responses;
+﻿using Raminagrobis.Api.Contracts.Requests;
+using Raminagrobis.Api.Contracts.Responses;
 using Refit;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Raminagrobi.WPF.Api
+namespace Raminagrobis.WPF.Api
 {
     public interface IRaminogrobiApi
     {
@@ -32,6 +32,6 @@ namespace Raminagrobi.WPF.Api
         public Task UpdateMember(MemberRequest request, int id);
 
         [Delete("/Member/Delete")]
-        public Task DeleteStudent(int id);
+        public Task DeleteMember(int id);
     }
 }

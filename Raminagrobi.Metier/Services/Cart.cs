@@ -1,5 +1,5 @@
 ﻿using Raminagrobis.DAL;
-using Raminagrobi.Api.Contracts.Responses;
+using Raminagrobis.Api.Contracts.Responses;
 using Depot.DAL.Depot;
 using System;
 using System.Collections.Generic;
@@ -7,12 +7,12 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
-namespace Raminagrobi.Metier.Services
+namespace Raminagrobis.Metier.Services
 {
     public class Cart
     {
 
-        public static List<CartMetier> GetAll()
+        public List<CartMetier> GetAll()
         {
             var all = new List<CartMetier>();
             var dep = new Cart_DAL_Depot();
@@ -23,28 +23,28 @@ namespace Raminagrobi.Metier.Services
             return all;
         }
 
-        public static CartMetier GetByID(int id)
+        public CartMetier GetByID(int id)
         {
             var dep = new Cart_DAL_Depot();
             var cart = dep.GetByID(id);
             return new CartMetier(cart.ID, cart.Id_Member, cart.Week_order);
         }
 
-        public static void Insert(CartResponse input)
+        public void Insert(CartResponse input)
         {
             var dep = new Cart_DAL_Depot();
             var cart = new Cart_DAL(input.IdMember, input.WeekOrder);
             dep.Insert(cart);
         }
 
-        public static void Update(int id, CartResponse input)
+        public void Update(int id, CartResponse input)
         {
             var dep = new Cart_DAL_Depot();
             var cart = new Cart_DAL(id, input.IdMember, input.WeekOrder);
             dep.Update(cart);
         }
 
-        public static void Delete(int id)
+        public void Delete(int id)
         {
             Cart_DAL cart;
             Cart_DAL_Depot dep = new Cart_DAL_Depot();

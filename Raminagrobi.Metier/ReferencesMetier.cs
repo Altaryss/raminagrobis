@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
-namespace Raminagrobi.Metier
+namespace Raminagrobis.Metier
 {
     public class ReferencesMetier
     {

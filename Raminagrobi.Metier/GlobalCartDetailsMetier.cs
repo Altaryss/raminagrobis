@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Raminagrobi.Metier
+namespace Raminagrobis.Metier
 {
     public class GlobalCartDetailsMetier
     {

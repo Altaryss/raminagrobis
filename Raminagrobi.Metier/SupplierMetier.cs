@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
-namespace Raminagrobi.Metier
+namespace Raminagrobis.Metier
 {
     public class SupplierMetier
     {        

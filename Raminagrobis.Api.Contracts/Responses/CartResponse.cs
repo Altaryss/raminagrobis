@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Raminagrobi.Api.Contracts.Responses
+namespace Raminagrobis.Api.Contracts.Responses
 {
     public class CartResponse
     {
