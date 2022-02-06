@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Raminagrobis.DAL;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -49,6 +50,7 @@ namespace Depot.DAL.Depot
         public abstract Type_DAL Insert(Type_DAL item);
 
         public abstract Type_DAL Update(Type_DAL item);
+
         #endregion
     }
 }

@@ -1,6 +1,12 @@
-﻿using System;
+﻿using Raminagrobis.DAL;
+using Depot.DAL.Depot;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
 
-namespace Raminagrobi.Metier
+namespace Raminagrobis.Metier
 {
     public class MemberMetier
     {
@@ -13,6 +19,16 @@ namespace Raminagrobi.Metier
         public string Address { get; private set; }
         public DateTime CreateAt { get; private set; }
 
+        public MemberMetier(string company, string civility, string surname, string name, string email, string address, DateTime createAt)
+        {
+            Company = company;
+            Civility = civility;
+            Surname = surname;
+            Name = name;
+            Email = email;
+            Address = address;
+            CreateAt = createAt;
+        }
         public MemberMetier(int id, string company, string civility, string surname, string name, string email, string address, DateTime createAt)
         {
             ID = id;
@@ -23,13 +39,6 @@ namespace Raminagrobi.Metier
             Email = email;
             Address = address;
             CreateAt = createAt;
-        }
-
-        public void Insert()
-        {
-            Member_DAL member = new Member_DAL(Company, Civility, Surname, Name, Email, Address, CreateAt);
-            Member_Depot_DAL memberDepot = new Member_Depot_DAL();
-            memberDepot.Insert(member);
         }
 
     }

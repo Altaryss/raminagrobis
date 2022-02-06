@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Raminagrobi.WPF.Core
+namespace Raminagrobis.WPF.Core
 {
     public class Command : ICommand
     {

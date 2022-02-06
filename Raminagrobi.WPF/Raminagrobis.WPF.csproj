@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Raminagrobis.Api.Contracts\Raminagrobi.Api.Contracts.csproj" />
+    <ProjectReference Include="..\Raminagrobis.Api.Contracts\Raminagrobis.Api.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

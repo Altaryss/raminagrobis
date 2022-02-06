@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Raminagrobi.Api
+namespace Raminagrobis.Api
 {
     public class Program
     {

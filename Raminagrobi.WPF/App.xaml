@@ -1,9 +1,9 @@
-﻿<Application x:Class="Raminagrobi.WPF.App"
+﻿<Application x:Class="Raminagrobis.WPF.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Raminagrobi.WPF"
-             xmlns:viewModels="clr-namespace:Raminagrobi.WPF.ViewModels"
-             xmlns:views="clr-namespace:Raminagrobi.WPF.Views"
+             xmlns:local="clr-namespace:Raminagrobis.WPF"
+             xmlns:viewModels="clr-namespace:Raminagrobis.WPF.ViewModels"
+             xmlns:views="clr-namespace:Raminagrobis.WPF.Views"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <DataTemplate DataType="{x:Type viewModels:HomeViewModel}">

@@ -12,7 +12,7 @@ namespace Depot.DAL.Depot
         public override List<Cart_details_DAL> GetAll()
         {
             CreerConnexionEtCommande();
-            commande.CommandText = "select id_cart, id_references, id_global_details, quantity, id from cart_details";
+            commande.CommandText = "select id_cart, id_references, id_global_details, quantity from cart_details";
 
 
             var reader = commande.ExecuteReader();
@@ -50,10 +50,10 @@ namespace Depot.DAL.Depot
 
             DetruireConnexionEtCommande();
 
-            return  Response;
+            return Response;
         }
 
-        public List<Cart_details_DAL> GetByCart (int id_cart)
+        public List<Cart_details_DAL> GetByCart(int id_cart)
         {
             CreerConnexionEtCommande();
 

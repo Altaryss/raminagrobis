@@ -63,12 +63,6 @@ namespace Depot.DAL.Depot
             var id = Convert.ToInt32(commande.ExecuteScalar());
 
             item.ID = id;
-            var d = new Cart_details_DAL();
-            //foreach (var i in item.Week_order)
-            //{
-            //    i.IDcart_global = id;
-            //    d.Insert(item);
-            //}
 
             DetruireConnexionEtCommande();
 

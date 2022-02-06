@@ -20,7 +20,7 @@ namespace Depot.DAL.Depot
 
             while (reader.Read())
             {
-                var rajouter = new Cart_DAL(reader.GetInt32(0), reader.GetString(1));
+                var rajouter = new Cart_DAL(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2));
                 list_cart.Add(rajouter);
             }
 
@@ -40,7 +40,7 @@ namespace Depot.DAL.Depot
             Cart_DAL rep;
             if (reader.Read())
             {
-                rep = new Cart_DAL(reader.GetInt32(0), reader.GetString(1));
+                rep = new Cart_DAL(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2));
             }
             else
             {
@@ -63,11 +63,6 @@ namespace Depot.DAL.Depot
 
             cart.ID = id;
             var depot = commande.ExecuteNonQuery();
-            //foreach(var item in cart.Id_Member)
-            //{
-            //    item.ID = id;
-            //    depot.Insert(item);
-            //}
 
             DetruireConnexionEtCommande();
 
@@ -78,7 +73,7 @@ namespace Depot.DAL.Depot
         {
             CreerConnexionEtCommande();
 
-            commande.CommandText = "update cart SET id_member = @id_member where id =  @id";
+            commande.CommandText = "update cart SET id_member = @id_member where id = @id";
             commande.Parameters.Add(new SqlParameter("@id_member", item.Id_Member));
             commande.Parameters.Add(new SqlParameter("@id", item.ID));
 

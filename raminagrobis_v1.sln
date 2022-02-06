@@ -7,13 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "raminagrobis_v1", "raminagr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Depot.DAL", "Depot.DAL\Depot.DAL.csproj", "{CC7D3003-1F12-420C-B7B4-5F2B534AB979}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raminagrobi.Metier", "Raminagrobi.Metier\Raminagrobi.Metier.csproj", "{EF6F6275-F2F2-4DD0-B926-BEA0A62329F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raminagrobis.Metier", "Raminagrobi.Metier\Raminagrobis.Metier.csproj", "{EF6F6275-F2F2-4DD0-B926-BEA0A62329F4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raminagrobi.WPF", "Raminagrobi.WPF\Raminagrobi.WPF.csproj", "{ACC7B48E-022F-4051-977C-22CEEDFCAA29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raminagrobis.WPF", "Raminagrobi.WPF\Raminagrobis.WPF.csproj", "{ACC7B48E-022F-4051-977C-22CEEDFCAA29}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raminagrobi.Api", "Raminagrobi.API\Raminagrobi.Api.csproj", "{B9315C97-DDCD-4982-BBA3-43412E2533FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raminagrobis.Api", "Raminagrobi.API\Raminagrobis.Api.csproj", "{B9315C97-DDCD-4982-BBA3-43412E2533FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raminagrobi.Api.Contracts", "Raminagrobis.Api.Contracts\Raminagrobi.Api.Contracts.csproj", "{D58584D2-A118-4DA9-AD2D-C05E94981EE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Raminagrobis.Api.Contracts", "Raminagrobis.Api.Contracts\Raminagrobis.Api.Contracts.csproj", "{D58584D2-A118-4DA9-AD2D-C05E94981EE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Raminagrobi.WPF.Views
+namespace Raminagrobis.WPF.Views
 {
     /// <summary>
     /// Interaction logic for Home.xaml

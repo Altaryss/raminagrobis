@@ -1,11 +1,11 @@
-﻿using Raminagrobi.WPF.Core;
+﻿using Raminagrobis.WPF.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Raminagrobi.WPF.ViewModels
+namespace Raminagrobis.WPF.ViewModels
 {
     public class MainWindowsViewModel : BaseViewModel
     {
@@ -26,7 +26,7 @@ namespace Raminagrobi.WPF.ViewModels
 
         private void OnMySuperButtonCommand()
         {
-            //Content = new CartViewModel();
+            Content = new MemberViewModel();
         }
     }
 }
