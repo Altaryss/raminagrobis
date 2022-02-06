@@ -67,12 +67,13 @@ namespace Raminagrobi.Api.Controllers
 
         [HttpPut]
         [Route("UpdateMember")]
-        public ActionResult UpdateMember(MemberRequest request, int id)
+        public ActionResult UpdateMember(int id,  MemberRequest request)
         {
             if (id <= 0)
                 return BadRequest();
 
             var res = _db.GetByID(id);
+            request.ID = id;
 
             if (res == null)
                 return NotFound();
@@ -88,7 +89,7 @@ namespace Raminagrobi.Api.Controllers
 
         [HttpDelete]
         [Route("Delete")]
-        public ActionResult Delete(int id)
+        public ActionResult DeleteMember(int id)
         {
             if (id <= 0)
                 return BadRequest();

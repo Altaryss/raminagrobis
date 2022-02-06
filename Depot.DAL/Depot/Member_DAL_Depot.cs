@@ -113,11 +113,14 @@ namespace Depot.DAL.Depot
             commande.Parameters.Add(new SqlParameter("@address", item.Address));
             commande.Parameters.Add(new SqlParameter("@create_at", item.Create_at));
             commande.Parameters.Add(new SqlParameter("@id", item.ID));
-            var nb_ligne = (int)commande.ExecuteNonQuery();
+
+            Member_DAL result = null;
+            if (commande.ExecuteNonQuery() > 0)
+                result = item;
 
             DetruireConnexionEtCommande();
 
-            return item;
+            return result;
         }
 
         public override void Delete(Member_DAL item)

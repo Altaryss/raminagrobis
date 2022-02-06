@@ -26,10 +26,10 @@ namespace Raminagrobi.WPF.Api
         public Task<MemberResponse> GetMemberById(int id);
 
         [Post("/Member/AddMember")]
-        public Task AddMember(MemberRequest request); // essayer de mettre le tout dans un obj
+        public Task AddMember(MemberRequest request);
 
         [Put("/Member/Update")]
-        public Task UpdateMember(int id, string company, string civility, string surname, string name, string email, string address, DateTime create_at);
+        public Task UpdateMember(MemberRequest request, int id);
 
         [Delete("/Member/Delete")]
         public Task DeleteStudent(int id);
